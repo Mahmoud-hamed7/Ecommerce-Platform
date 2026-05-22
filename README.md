@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+🛒 E-Commerce Platform
+This project is a modern, high-performance E-commerce web application built with React.js and Tailwind CSS. It focuses on a seamless shopping experience with real-time data handling, secure authentication, and a fully responsive UI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Live Demo
+Click here to view the live project
 
-Currently, two official plugins are available:
+🛠️ Tech Stack & Features
+The application is architected to be scalable and maintainable, utilizing cutting-edge frontend technologies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Core Framework: Built with React 19 and Vite for optimized development and fast bundling.
 
-## React Compiler
+State & Data Management: * Leveraged TanStack Query (React Query) for efficient server-state synchronization, caching, and background re-fetching.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Used Context API for global user authentication state.
 
-## Expanding the ESLint configuration
+Validation & Forms: Implemented robust form validation using Formik and Yup, featuring custom regex for Egyptian phone number format and secure password patterns.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Routing: Professional navigation and route protection using React Router 7.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Styling: Designed with Tailwind CSS (v4) for a mobile-first, responsive, and modern look, integrated with Flowbite for UI components.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+API Integration: Secure REST API communication using Axios.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+UX Enhancements: Professional alerts with react-hot-toast and smooth loading states using react-spinners.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+💻 Getting Started
+To run this project locally, follow these steps:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone the repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bash
+git clone https://github.com/Mahmoud-hamed7/Ecommerce-Platform.git
+Navigate to the directory:
+
+Bash
+cd Ecommerce-Platform
+Install dependencies:
+
+Bash
+npm install
+Run the project:
+
+Bash
+npm run dev
+🤝 Contact
+If you have any feedback or want to discuss this project, feel free to reach out:
+
+LinkedIn: https://www.linkedin.com/in/mahmoud-hamed-fawaz111/
+
+Email:mh8207977@gmail.com

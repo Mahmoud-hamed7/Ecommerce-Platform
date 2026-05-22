@@ -4,7 +4,7 @@ import type { ICartData } from "../Types/types";
 // import type { ICategory } from "../Types/types";
 
 export default function Cart() {
-  const { getUserCart,updateCartDetails,deleteCartItem,clearCart } = useContext(CartContext);
+  const { getUserCart,updateCartDetails,deleteCartItem } = useContext(CartContext);
   const [cartDetails, setCartDetails] = useState<ICartData | null>(null);
   async function getCartItem() {
     const response = await getUserCart();
@@ -23,11 +23,11 @@ export default function Cart() {
     setCartDetails(response.data.data);
   }
 
-     async function ClearAllItem() {
-    const response = await clearCart();
-    console.log(response.data);
-    setCartDetails(response.data.data);
-  }
+  //    async function ClearAllItem() {
+  //   const response = await clearCart();
+  //   console.log(response.data);
+  //   setCartDetails(response.data.data);
+  // }
 // updateCartDetails
   useEffect(() => {
     getCartItem();

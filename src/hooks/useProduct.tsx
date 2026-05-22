@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { data } from 'react-router';
 
 
 export default function useProduct() {

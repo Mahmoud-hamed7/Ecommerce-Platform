@@ -8,7 +8,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-import { Link, Links, NavLink, useNavigate } from "react-router";
+import { Link,  NavLink, useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 
 export default function Navbar() {

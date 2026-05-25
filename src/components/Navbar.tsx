@@ -11,6 +11,8 @@ import {
 import { Link,  NavLink, useNavigate } from "react-router";
 import { UserContext } from "../contexts/UserContext";
 
+ import heroS1 from '../assets/freshcart-logo.svg'
+
 export default function Navbar() {
   const { UserLogin, setUserLogin } = useContext(UserContext);
   // console.log(UserLogin);
@@ -34,7 +36,7 @@ export default function Navbar() {
       <div className="flex justify-between w-lvh">
         <Link to={'/'}>
           <div className="flex items-center gap-2 cursor-pointer">
-            <img src="/src/assets/images/navLOGO.svg" alt="Logo" className="" />
+            <img src={heroS1} className="" />
           </div>
         </Link>
         {UserLogin !== null ? (

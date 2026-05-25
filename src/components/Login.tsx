@@ -6,18 +6,18 @@ import * as yup from "yup";
 import { UserContext } from "../contexts/UserContext";
 
 let validationSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email("email must be @ gamil.com")
-    .required(" email is requierd "),
+ email: yup
+  .string()
+  .email("Please enter a valid email address") // أو "Email must be a @gmail.com address" إذا كنت تقصد ذلك تحديداً
+  .required("Email is required"),
 
-  password: yup
-    .string()
-    .matches(
-      /^[A-Z][a-z 0-9]{5,10}$/,
-      "password  must be an strat with upeercase ",
-    )
-    .required(" password is requierd "),
+password: yup
+  .string()
+  .matches(
+    /^[A-Z][a-z 0-9]{5,10}$/,
+    "Password must start with an uppercase letter" 
+  )
+  .required("Password is required"),
 });
 
 export default function Login() {
@@ -131,7 +131,7 @@ export default function Login() {
 
               <label
                 htmlFor="email"
-                className="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                className="absolute text-sm text-body duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-0 peer-focus:inset-s-0 peer-focus:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               >
                 enter your email :
               </label>

@@ -6,30 +6,34 @@ import * as yup from "yup";
 import { UserContext } from "../contexts/UserContext";
 
 let validationSchema = yup.object().shape({
-  name: yup
-    .string()
-    .required("name is requierd ")
-    .max(10, "must dowm than 10")
-    .min(3, "must up than three"),
-  email: yup
-    .string()
-    .email("email must be @ gamil.com")
-    .required(" email is requierd "),
-  phone: yup
-    .string()
-    .matches(/^01[0125][0-9]{8}$/, "phone must be an egyption")
-    .required(" phone is requierd "),
-  password: yup
-    .string()
-    .matches(
-      /^[A-Z][a-z 0-9]{5,10}$/,
-      "password  must be an strat with upeercase ",
-    )
-    .required(" password is requierd "),
-  rePassword: yup
-    .string()
-    .oneOf([yup.ref("password")], "repassword must be the same of password")
-    .required(" repassword is requierd "),
+ name: yup
+  .string()
+  .required("Name is required")
+  .min(3, "Name must be at least 3 characters")
+  .max(10, "Name cannot exceed 10 characters"),
+
+email: yup
+  .string()
+  .email("Please enter a valid email address")
+  .required("Email is required"),
+
+phone: yup
+  .string()
+  .matches(/^01[0125][0-9]{8}$/, "Please enter a valid Egyptian phone number")
+  .required("Phone number is required"),
+
+password: yup
+  .string()
+  .matches(
+    /^[A-Z][a-z 0-9]{5,10}$/,
+    "Password must start with an uppercase letter"
+  )
+  .required("Password is required"),
+
+rePassword: yup
+  .string()
+  .oneOf([yup.ref("password")], "Passwords must match")
+  .required("Please confirm your password")
 });
 
   export default function Register() {

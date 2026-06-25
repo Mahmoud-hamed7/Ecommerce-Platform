@@ -1,4 +1,4 @@
-import { createBrowserRouter, createHashRouter } from "react-router"; // تأكد إنها react-router-dom
+import { createHashRouter } from "react-router"; // تأكد إنها react-router-dom
 import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
@@ -21,57 +21,57 @@ export default createHashRouter(
         {
           index: true, // يفضل استخدام index للصفحة الرئيسية بدل path: "/"
           element: (
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <Home />
+            // </ProtectedRoute>
           ),
         },
         {
           path: "Products", // شيلنا الـ / عشان هو بيكمل على المسار الأب
           element: (
-            <ProtectedRoute>
-              <Products />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <Products />
+            // </ProtectedRoute>
           ),
         },
         {
           path: "categories",
           element: (
-            <ProtectedRoute>
-              <Categories />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <Categories />
+            // </ProtectedRoute>
           ),
         },
         {
           path: "brands",
           element: (
-            <ProtectedRoute>
-              <BrandsGrid />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <BrandsGrid />
+            // </ProtectedRoute>
           ),
         },
         {
           path: "cart",
           element: (
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <Cart />
+            // </ProtectedRoute>
           ),
         },
         {
           path: "productDetails/:id/:cat",
           element: (
-            <ProtectedRoute>
-              <ProductDetails />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <ProductDetails />
+            // </ProtectedRoute>
           ),
         },
         {
           path: "CategoryDetails/:id",
           element: (
-            <ProtectedRoute>
-              <CategoryDetails />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <CategoryDetails />
+            // </ProtectedRoute>
           ),
         },
         {
@@ -87,6 +87,6 @@ export default createHashRouter(
   ],
   {
     // هنا المكان الصح للـ basename في Object منفصل
-    basename: "/Ecommerce-Platform",
-  }
+    // basename: "/Ecommerce-Platform",
+  },
 );

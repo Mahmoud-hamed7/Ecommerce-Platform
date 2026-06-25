@@ -1,12 +1,9 @@
-import { Navigate } from 'react-router'
+import { Navigate } from 'react-router'; // اتأكد إنها react-router-dom
 
-export default function PrrotectedRoute(props:any) {
+export default function ProtectedRoute(props: any) {
     if (localStorage.getItem('userToken')) {
-
-       return  props.children
-    }else{
-
-        return <Navigate to={'/login'}></Navigate>
+        return props.children;
+    } else {
+        return <Navigate to={'/login'} />;
     }
-  
 }

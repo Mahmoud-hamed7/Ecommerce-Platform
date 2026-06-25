@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router"; // تأكد إنها react-router-dom
 import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
@@ -11,53 +11,82 @@ import ProductDetails from "../components/ProductDetails";
 import CategoryDetails from "../components/CategoryDetails";
 import Cart from "../components/Cart";
 
-
-export default createBrowserRouter([
-  
-  {path: "/", element:<MainLayouts></MainLayouts>
-  // ,ErrorBoundary:NOTFOUND
-    ,children:[
-        {path: "/", 
-          element:<ProtectedRoute><Home></Home></ProtectedRoute> 
-        
-        }
-        ,{path: "/Products",
-           element:
-           <ProtectedRoute><Products></Products></ProtectedRoute>
-          }
-          ,
-        {path: "/categories",
-           element:
-           <ProtectedRoute> <Categories></Categories></ProtectedRoute>
-       }
-        ,
-        {path: "/brands",
-           element:
-           <ProtectedRoute><BrandsGrid></BrandsGrid></ProtectedRoute>
-        }
-       ,  {path: "/cart",
-           element:
-           <ProtectedRoute><Cart></Cart></ProtectedRoute>
-        }
-        , {path: "/productDetails/:id/:cat",
-           element:
-           <ProtectedRoute><ProductDetails></ProductDetails></ProtectedRoute>
-        }
-         , {path: "/CategoryDetails/:id",
-           element:
-           <ProtectedRoute><CategoryDetails></CategoryDetails></ProtectedRoute>
-        }
-      //   CategoryDetails
-        // productDetails
-        ,{path: "/register",
-           element:
-        <Register></Register>}
-         ,{path: "/login",
-           element:
-        <Login></Login>}
-
-
-
+export default createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayouts />,
+      // ErrorBoundary: NOTFOUND,
+      children: [
+        {
+          index: true, // يفضل استخدام index للصفحة الرئيسية بدل path: "/"
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "Products", // شيلنا الـ / عشان هو بيكمل على المسار الأب
+          element: (
+            <ProtectedRoute>
+              <Products />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "categories",
+          element: (
+            <ProtectedRoute>
+              <Categories />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "brands",
+          element: (
+            <ProtectedRoute>
+              <BrandsGrid />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "cart",
+          element: (
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "productDetails/:id/:cat",
+          element: (
+            <ProtectedRoute>
+              <ProductDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "CategoryDetails/:id",
+          element: (
+            <ProtectedRoute>
+              <CategoryDetails />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "register",
+          element: <Register />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
       ],
-  },
-]);
+    },
+  ],
+  {
+    // هنا المكان الصح للـ basename في Object منفصل
+    basename: "/Ecommerce-Platform",
+  }
+);

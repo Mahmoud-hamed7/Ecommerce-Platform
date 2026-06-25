@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router"; // تأكد إنها react-router-dom
+import { createBrowserRouter, createHashRouter } from "react-router"; // تأكد إنها react-router-dom
 import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
@@ -11,7 +11,7 @@ import ProductDetails from "../components/ProductDetails";
 import CategoryDetails from "../components/CategoryDetails";
 import Cart from "../components/Cart";
 
-export default createBrowserRouter(
+export default createHashRouter(
   [
     {
       path: "/",
